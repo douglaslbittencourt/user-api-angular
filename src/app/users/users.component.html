@@ -1,0 +1,73 @@
+<mat-sidenav-container class="sidenav-container">
+   
+<div class="container">
+  <h1>Users List</h1>
+  <table mat-table [dataSource]="dataSource" [dataSource]="dataSource" class="mat-elevation-z8" style="width:100%; height: 100%;">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> E-mail </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="birthDate">
+      <th mat-header-cell *matHeaderCellDef> Birth Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="naturality">
+      <th mat-header-cell *matHeaderCellDef> Naturality </th>
+      <td mat-cell *matCellDef="let element"> {{element.naturality}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nationality">
+      <th mat-header-cell *matHeaderCellDef> Nationality </th>
+      <td mat-cell *matCellDef="let element"> {{element.nationality}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef> CPF </th>
+      <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createDate">
+      <th mat-header-cell *matHeaderCellDef> Create Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.createDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="updateDate">
+      <th mat-header-cell *matHeaderCellDef> Update Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.updateDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+         <button mat-flat-button color="primary" [routerLink]="['/edit-user', element.id]"> Edit</button>
+         <button mat-flat-button color="warn" (click)="deleteUser(element.id);"> Delete</button>
+      </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div >
+
+</mat-sidenav-container>
+  
+  
+  

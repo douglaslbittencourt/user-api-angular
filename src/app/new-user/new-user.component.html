@@ -1,0 +1,37 @@
+<div>
+  <h3>Add New User</h3>
+</div>
+<form style="height: 100%; width: 100%;" class="example-container" [formGroup]="userForm"
+  (ngSubmit)="addUser(userForm.value)">
+  <mat-form-field>
+    <input matInput name="name" placeholder="Name" formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="gender" placeholder="Gender" formControlName="gender">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput name="email" placeholder="E-mail" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field appearance="birthDate">
+    <mat-label>Birth Date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <br>
+  <mat-form-field>
+    <input matInput name="naturality" placeholder="Naturality" formControlName="naturality">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="nationality" placeholder="Nationality" formControlName="nationality">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput name="cpf" placeholder="CPF" formControlName="cpf">
+  </mat-form-field>
+  <br>
+  <button type="submit" [disabled]="!userForm.valid" mat-button>Save</button>
+</form>

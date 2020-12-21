@@ -1,0 +1,7 @@
+{
+  "/user": {
+      "target": "https://douglas-userapi.herokuapp.com/",
+      "secure": true,
+      "changeOrigin": true
+  }
+}
